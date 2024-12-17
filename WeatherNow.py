@@ -45,3 +45,12 @@ def notify_weather(message: str) -> None:
         timeout=10,
         toast=False,
     )
+
+def main():
+    """
+    Запускает программу, выполняет вызовы функций запроса погоды, форматирования данных о погоде для читаемого вида и обрабатывает вывод.
+     - return: None. 
+    """
+    weather_dict = get_weather(CITY, API_KEY)
+    message = format_weather_message(weather_dict)
+    notify_weather(message)
