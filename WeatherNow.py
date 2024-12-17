@@ -54,3 +54,7 @@ def main():
     weather_dict = get_weather(CITY, API_KEY)
     message = format_weather_message(weather_dict)
     notify_weather(message)
+
+CITY = "Волгоград"
+API_KEY = "23496c2a58b99648af590ee8a29c5348"
+main()
