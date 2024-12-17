@@ -29,3 +29,19 @@ def format_weather_message(weather_dict: dict) -> str:
     description = weather_dict['weather'][0]['description']
     return  f'Локация: {location}\nТемпература: {temp}°C\nОщущается как: {feels_like}°C\nОписание: {description}'
 
+def notify_weather(message: str) -> None:
+    """
+    Функция отправления уведомления пользователю с информацией о погоде
+     - message: str: Сообщение о погоде для уведомления.
+     - return: None.   
+     (используется библиотека `plyer` !!!) 
+    """
+    from plyer import notification
+    notification.notify(
+        title="Погода",
+        message=message,
+        app_name="Погода",
+        app_icon=None,
+        timeout=10,
+        toast=False,
+    )
